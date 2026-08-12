@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CiKiMi Game Studio - Game Development Company</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #0a0e1a;
+            color: #e6e9f2;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px 64px;
+        }
+
+        /* ===== Nav ===== */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0 32px;
+        }
+        .nav-logo {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #00d4ff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-links a {
+            color: #8b93a8;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            padding: 56px 0 44px;
+            border-bottom: 1px solid #1e2740;
+            margin-bottom: 8px;
+        }
+        .hero-company {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-sub {
+            font-size: 17px;
+            color: #8b93a8;
+            max-width: 560px;
+        }
+
+        /* ===== Section ===== */
+        section {
+            padding: 44px 0;
+            border-bottom: 1px solid #1e2740;
+        }
+        .section-tag {
+            font-size: 12px;
+            font-weight: 700;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #f0f2fa;
+        }
+        p {
+            font-size: 15px;
+            color: #a8b0c4;
+            margin-bottom: 12px;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== About ===== */
+        .about-grid {
+            margin-top: 16px;
+        }
+        .about-row {
+            padding: 16px 0;
+            border-bottom: 1px solid #1e2740;
+        }
+        .about-row:last-child {
+            border-bottom: none;
+        }
+        .about-row strong {
+            display: block;
+            font-size: 15px;
+            color: #e6e9f2;
+            margin-bottom: 4px;
+        }
+        .about-row span {
+            font-size: 14px;
+            color: #8b93a8;
+        }
+
+        /* ===== Games ===== */
+        .game-list {
+            margin-top: 8px;
+        }
+        .game {
+            padding: 20px 0;
+            border-bottom: 1px solid #1e2740;
+        }
+        .game:last-child {
+            border-bottom: none;
+        }
+        .game-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: #f0f2fa;
+            margin-bottom: 4px;
+        }
+        .game-name .status {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 10px;
+            vertical-align: middle;
+            margin-left: 8px;
+            letter-spacing: 0.5px;
+        }
+        .game-name .status.live {
+            color: #00d4ff;
+            background: rgba(0, 212, 255, 0.12);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        .game-name .status.soon {
+            color: #a855f7;
+            background: rgba(168, 85, 247, 0.12);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+        .game-desc {
+            font-size: 14px;
+            color: #8b93a8;
+        }
+
+        /* ===== Values ===== */
+        .values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        @media (max-width: 520px) {
+            .values {
+                grid-template-columns: 1fr;
+            }
+        }
+        .value {
+            padding: 20px;
+            background: #12182b;
+            border: 1px solid #1e2740;
+            border-radius: 8px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .value:hover {
+            border-color: #00d4ff;
+            transform: translateY(-2px);
+        }
+        .value-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #e6e9f2;
+            margin-bottom: 6px;
+        }
+        .value-desc {
+            font-size: 14px;
+            color: #8b93a8;
+            margin-bottom: 0;
+        }
+
+        /* ===== Updates ===== */
+        .update-list {
+            margin-top: 8px;
+        }
+        .update {
+            padding: 14px 0;
+            border-bottom: 1px solid #1e2740;
+        }
+        .update:last-child {
+            border-bottom: none;
+        }
+        .update-date {
+            font-size: 12px;
+            color: #00d4ff;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .update-text {
+            font-size: 15px;
+            color: #c2c8d9;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-list {
+            margin-top: 8px;
+        }
+        .faq {
+            padding: 14px 0;
+            border-bottom: 1px solid #1e2740;
+        }
+        .faq:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-size: 15px;
+            font-weight: 600;
+            color: #e6e9f2;
+            margin-bottom: 4px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: #8b93a8;
+        }
+
+        /* ===== Contact ===== */
+        .contact-block {
+            margin-top: 16px;
+            padding: 24px;
+            background: #12182b;
+            border: 1px solid #1e2740;
+            border-radius: 8px;
+        }
+        .contact-line {
+            font-size: 15px;
+            color: #c2c8d9;
+            margin-bottom: 8px;
+        }
+        .contact-line a {
+            color: #00d4ff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        .contact-line a:hover {
+            border-bottom-color: #00d4ff;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            padding-top: 32px;
+            font-size: 13px;
+            color: #5b647a;
+        }
+        .footer-links {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
+            color: #8b93a8;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .footer-links a:hover {
+            color: #00d4ff;
+        }
+
+        @media (max-width: 600px) {
+            .hero-company { font-size: 32px; }
+            .nav-links a { margin-left: 14px; font-size: 13px; }
+            section { padding: 32px 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Nav -->
+        <nav>
+            <div class="nav-logo">CIKIMI GAME STUDIO</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#games">Games</a>
+                <a href="#values">Values</a>
+                <a href="#updates">Updates</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-company">Play light,<br>play happy.</div>
+            <div class="hero-sub">CiKiMi Game Studio is an independent game studio creating casual, colorful mobile games that bring a smile to players around the world.</div>
+        </div>
+
+        <!-- About -->
+        <section id="about">
+            <div class="section-tag">About Us</div>
+            <h2>Who we are</h2>
+            <p>CiKiMi Game Studio was founded on a simple belief: games should be fun, friendly, and for everyone. We make light, colorful games that are easy to pick up and satisfying to play, no matter how much time you have.</p>
+            <p>Our small team focuses on bright designs, simple mechanics, and the little moments of joy that make casual gaming special. We craft every game with care, because we play games too.</p>
+
+            <div class="about-grid">
+                <div class="about-row">
+                    <strong>Our Mission</strong>
+                    <span>To create bright, cheerful games that make everyday moments more fun.</span>
+                </div>
+                <div class="about-row">
+                    <strong>Our Approach</strong>
+                    <span>Simple ideas, careful polish, and games that respect the player's time.</span>
+                </div>
+                <div class="about-row">
+                    <strong>Our Audience</strong>
+                    <span>Casual players of all ages who enjoy quick, relaxing, colorful play.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games -->
+        <section id="games">
+            <div class="section-tag">Our Games</div>
+            <h2>What we've made</h2>
+
+            <div class="game-list">
+                <div class="game">
+                    <div class="game-name">Candy Blast <span class="status live">Live</span></div>
+                    <div class="game-desc">A sweet, colorful matching game. Swap candies, make combos, and keep the fun going.</div>
+                </div>
+                <div class="game">
+                    <div class="game-name">Happy Merge <span class="status live">Live</span></div>
+                    <div class="game-desc">Merge cute items to unlock even cuter ones in this relaxing, cheerful puzzle.</div>
+                </div>
+                <div class="game">
+                    <div class="game-name">Ocean Sort <span class="status soon">Coming Soon</span></div>
+                    <div class="game-desc">A calm color-sorting adventure beneath the sea. Organize, relax, and drift away.</div>
+                </div>
+                <div class="game">
+                    <div class="game-name">Word Garden <span class="status soon">In Development</span></div>
+                    <div class="game-desc">A cozy word puzzle where you grow a beautiful garden one word at a time.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section id="values">
+            <div class="section-tag">What We Believe</div>
+            <h2>Our values</h2>
+
+            <div class="values">
+                <div class="value">
+                    <div class="value-title">Fun for Everyone</div>
+                    <div class="value-desc">Simple rules and friendly design, so anyone can jump in and enjoy.</div>
+                </div>
+                <div class="value">
+                    <div class="value-title">Bright by Nature</div>
+                    <div class="value-desc">Colorful art and cheerful vibes are at the heart of every game we make.</div>
+                </div>
+                <div class="value">
+                    <div class="value-title">Made with Care</div>
+                    <div class="value-desc">We polish the details, because the little things make games great.</div>
+                </div>
+                <div class="value">
+                    <div class="value-title">Respect Your Time</div>
+                    <div class="value-desc">Quick sessions, instant smiles. Our games fit into any moment of your day.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updates -->
+        <section id="updates">
+            <div class="section-tag">News &amp; Updates</div>
+            <h2>What's new</h2>
+
+            <div class="update-list">
+                <div class="update">
+                    <div class="update-date">2026 · August</div>
+                    <div class="update-text">Candy Blast celebrates 1 million downloads. Thank you, players!</div>
+                </div>
+                <div class="update">
+                    <div class="update-date">2026 · July</div>
+                    <div class="update-text">Happy Merge launches worldwide with a brand-new event.</div>
+                </div>
+                <div class="update">
+                    <div class="update-date">2026 · June</div>
+                    <div class="update-text">Ocean Sort enters early development — our first ocean-themed title.</div>
+                </div>
+                <div class="update">
+                    <div class="update-date">2026 · May</div>
+                    <div class="update-text">Candy Blast adds 40 new levels in its biggest update yet.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="section-tag">FAQ</div>
+            <h2>Common questions</h2>
+
+            <div class="faq-list">
+                <div class="faq">
+                    <div class="faq-q">Are your games free to play?</div>
+                    <div class="faq-a">Yes. All our games are free to download and play, supported by optional ads and in-game purchases.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-q">Do you collect my personal data?</div>
+                    <div class="faq-a">We collect only the minimum data needed to run and improve our games. See our Privacy Policy for details.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-q">Can I collaborate or partner with you?</div>
+                    <div class="faq-a">We're always happy to hear from players and partners. Reach out using the contact details below.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-q">How do I report a problem?</div>
+                    <div class="faq-a">Email us and we'll take a look as soon as we can. Your feedback makes our games better.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="section-tag">Contact</div>
+            <h2>Get in touch</h2>
+            <p>Questions, feedback, or business inquiries — we'd love to hear from you.</p>
+            <div class="contact-block">
+                <div class="contact-line">CiKiMi Game Studio</div>
+                <div class="contact-line">Email: <a href="mailto:latoyaryan197494@gmail.com">latoyaryan197494@gmail.com</a></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+            <div>&copy; 2026 CiKiMi Game Studio. All rights reserved.</div>
+        </footer>
+    </div>
+</body>
+</html>
