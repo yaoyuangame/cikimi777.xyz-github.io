@@ -3,6 +3,9 @@ google.com, pub-2368191291532374, DIRECT, f08c47fec0942fa0
 ＃Meta
  facebook.com, 825372703542227, DIRECT, c3e20eee3f780d68
 #Bigo
+bigo.sg,tsir3scawe,DIRECT
+nativo.com, 6137, RESELLER, 59521ca7cc5e9fee
+onetag.com, 5649f68000b2f63, RESELLER
 bigo.sg,jn0rbayttb,DIRECT
 appnexus.com,15127,RESELLER,f5ab79cb980f11d1
 anzu.io,694ac1b38f0e5ae09b604cb8,RESELLER
